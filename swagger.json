@@ -1,0 +1,533 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "territoire-bj",
+        "description": "Cette API vous fournit les informations sur les départements, communes, arrondissements et quartiers/villages du Bénin",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:5010",
+    "basePath": "/territoire",
+    "tags": [
+        {
+            "name": "Territoire",
+            "description": "Routes de récuoération des départements/communes/arrondissements/quartiers du Bénin"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/departements": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les départements",
+                "description": "Retourne la liste de tous les départements",
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": 
+                                [
+                                    "ATACORA",
+                                    "DONGA"
+                                ],
+                                "schema": {
+                                    "type" : "array",
+                                    "properties": {
+                                        "items": {
+                                            "type": "string",
+                                            "example": [
+                                                "ATACORA",
+                                                "DONGA"            
+                                            ],
+                                            "description": "Nom de département du Bénin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/communes": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les communes",
+                "description": "Retourne la liste de toutes les communes",
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": 
+                                [
+                                    "ABOMEY-CALAVI",
+                                    "BASSILA",
+                                    "COTONOU",
+                                    "DJOUGOU",
+                                    "PARAKOU"
+                                ],
+                                "schema": {
+                                    "type" : "array",
+                                    "properties": {
+                                        "items": {
+                                            "type": "string",
+                                            "example": [
+                                                "COTONOU",
+                                                "DJOUGOU"
+                                            ],
+                                            "description": "Nom de commune du Bénin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/arrondissements": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les arrondissements",
+                "description": "Retourne la liste de tous les arrondissements",
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": 
+                                [
+                                    "arrondissement 1",
+                                    "arrondissement 2",
+                                    "arrondissement 3"
+                                ],
+                                "schema": {
+                                    "type" : "array",
+                                    "properties": {
+                                        "items": {
+                                            "type": "string",
+                                            "example": [
+                                                "arrondissement 1",
+                                                "arrondissement 2",
+                                                "arrondissement 3"
+                                            ],
+                                            "description": "Nom d'arrondissement du Bénin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/quartiers": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les quartiers",
+                "description": "Retourne la liste de tous les quartiers",
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": 
+                                [
+                                    "quartiers 1",
+                                    "quartiers 2",
+                                    "quartiers 3"
+                                ],
+                                "schema": {
+                                    "type" : "array",
+                                    "properties": {
+                                        "items": {
+                                            "type": "string",
+                                            "example": [
+                                                "quartiers 1",
+                                                "quartiers 2",
+                                                "quartiers 3"
+                                            ],
+                                            "description": "Nom de quartiers du Bénin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/departements/{dept}/communes": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les départements",
+                "description": "Retourne la liste de tous les départements",
+                "parameters": [
+                    {
+                        "name": "dept",
+                        "in": "path",
+                        "description": "Nom du département dont on veut connaître les communes",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "DONGA"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "id_dep": 7,
+                                    "lib_dep": "DONGA",
+                                    "communes": [
+                                        {
+                                            "id_com": 44,
+                                            "lib_com": "BASSILA",
+                                            "arrondissements": [
+                                                {
+                                                    "id_arrond": 316,
+                                                    "lib_arrond": "ALEDJO",
+                                                    "quartiers": [
+                                                        {
+                                                            "id_quart": 3080,
+                                                            "lib_quart": "AKARADE"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                
+                                        }
+                                    ]
+                                },
+                                "schema": {
+                                    "type" : "object",
+                                    "properties": {
+                                        "type": "object",
+                                        "items": {
+                                            "id_dep": {
+                                                "type": "integer",
+                                                "example": 7,
+                                                "description": "id du département dans la bdd"
+                                            },
+                                            "lib_dep": {
+                                                "type": "string",
+                                                "example": "DONGA",
+                                                "description": "Nom du département"
+                                            },
+                                            "communes": {
+                                                "type": "array",
+                                                "description": "Liste des communes du département",
+                                                "properties": {
+                                                    "type": "object",
+                                                    "items": {
+                                                        "id_com": {
+                                                            "type": "integer",
+                                                            "example": 44
+                                                        },
+                                                        "lib_com": {
+                                                            "type": "string",
+                                                            "example": "DJOUGOU",
+                                                            "description": "Nom d'une commune du département"
+                                                        },
+                                                        "arrondissements": {
+                                                            "type": "array",
+                                                            "description": "Liste des arrondissements de la commune du département",
+                                                            "properties": {
+                                                                "type": "object",
+                                                                "items": {
+                                                                    "id_arrond": {
+                                                                        "type": "integer",
+                                                                        "example": 316
+                                                                    },
+                                                                    "lib_arrond": {
+                                                                        "type": "string",
+                                                                        "example": "SEROU",
+                                                                        "description": "Nom d'un arrondissement d'une commune du département"
+                                                                    },
+                                                                    "quartiers": {
+                                                                        "type": "array",
+                                                                        "description": "Liste quartiers de l'arrondissement de la commune du département choisi",
+                                                                        "properties": {
+                                                                            "type": "object",
+                                                                            "items": {
+                                                                                "id_quart": {
+                                                                                    "type": "integer",
+                                                                                    "example": 3160
+                                                                                },
+                                                                                "lib_quart": {
+                                                                                    "type": "string",
+                                                                                    "example": "ZOUNTORI",
+                                                                                    "description": "Nom d'un quartier de l'arrondissement d'une commune du département choisi"
+                                                                                }
+                                                                            }
+                                                                        }
+            
+                                                                    }
+                                                                }
+                                                            }
+            
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/communes/{city}/arrondissements": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les arrondissements",
+                "description": "Retourne la liste de tous les arrondissements d'une commune",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "path",
+                        "description": "Nom d'une commune dont on veut connaître les arrondissements",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "DJOUGOU"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "departement": "DONGA",
+                                    "communes": [
+                                        {
+                                            "id_com": 44,
+                                            "lib_com": "BASSILA",
+                                            "arrondissements": [
+                                                {
+                                                    "id_arrond": 316,
+                                                    "lib_arrond": "ALEDJO",
+                                                    "quartiers": [
+                                                        {
+                                                            "id_quart": 3080,
+                                                            "lib_quart": "AKARADE"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                
+                                        }
+                                    ]
+                                },
+                                "schema": {
+                                    "type" : "object",
+                                    "properties": {
+                                        "type": "object",
+                                        "items": {
+                                            "departement": {
+                                                "type": "string",
+                                                "example": "DONGA",
+                                                "description": "Nom du département"
+                                            },
+                                            "communes": {
+                                                "type": "array",
+                                                "description": "Liste des communes du département",
+                                                "properties": {
+                                                    "type": "object",
+                                                    "items": {
+                                                        "id_com": {
+                                                            "type": "integer",
+                                                            "example": 44
+                                                        },
+                                                        "lib_com": {
+                                                            "type": "string",
+                                                            "example": "DJOUGOU",
+                                                            "description": "Nom d'une commune du département"
+                                                        },
+                                                        "arrondissements": {
+                                                            "type": "array",
+                                                            "description": "Liste des arrondissements de la commune du département",
+                                                            "properties": {
+                                                                "type": "object",
+                                                                "items": {
+                                                                    "id_arrond": {
+                                                                        "type": "integer",
+                                                                        "example": 316
+                                                                    },
+                                                                    "lib_arrond": {
+                                                                        "type": "string",
+                                                                        "example": "SEROU",
+                                                                        "description": "Nom d'un arrondissement d'une commune du département"
+                                                                    },
+                                                                    "quartiers": {
+                                                                        "type": "array",
+                                                                        "description": "Liste quartiers de l'arrondissement de la commune du département choisi",
+                                                                        "properties": {
+                                                                            "type": "object",
+                                                                            "items": {
+                                                                                "id_quart": {
+                                                                                    "type": "integer",
+                                                                                    "example": 3160
+                                                                                },
+                                                                                "lib_quart": {
+                                                                                    "type": "string",
+                                                                                    "example": "ZOUNTORI",
+                                                                                    "description": "Nom d'un quartier de l'arrondissement d'une commune du département choisi"
+                                                                                }
+                                                                            }
+                                                                        }
+            
+                                                                    }
+                                                                }
+                                                            }
+            
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/arrondissements/{district}/quartiers": {
+            "get": {
+                "tags": [
+                    "Territoire"
+                ],
+                "summary": "Récupérer les départements",
+                "description": "Retourne la liste de tous les départements",
+                "parameters": [
+                    {
+                        "name": "district",
+                        "in": "path",
+                        "description": "Nom d'un arrondissement dont on veut connaître les quartiers",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "SEROU"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "departement": "DONGA",
+                                    "commune": "DJOUGOU",
+                                    "arrondissement": {
+                                        "id_arrond": 316,
+                                        "lib_arrond": "ALEDJO",
+                                        "quartiers": [
+                                            {
+                                                "id_quart": 3080,
+                                                "lib_quart": "AKARADE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "schema": {
+                                    "type" : "object",
+                                    "properties": {
+                                        "type": "object",
+                                        "items": {
+                                            "departement": {
+                                                "type": "string",
+                                                "example": "DONGA",
+                                                "description": "Nom du département"
+                                            },
+                                            "communes": {
+                                                "type": "string",
+                                                "example": "DJOUGOU",
+                                                "description": "Nom de la commune"
+                                            },
+                                            "arrondissements": {
+                                                "type": "array",
+                                                "description": "Liste des arrondissements de la commune du département",
+                                                "properties": {
+                                                    "type": "object",
+                                                    "items": {
+                                                        "id_arrond": {
+                                                            "type": "integer",
+                                                            "example": 316
+                                                        },
+                                                        "lib_arrond": {
+                                                            "type": "string",
+                                                            "example": "SEROU",
+                                                            "description": "Nom d'un arrondissement d'une commune du département"
+                                                        },
+                                                        "quartiers": {
+                                                            "type": "array",
+                                                            "description": "Liste quartiers de l'arrondissement de la commune du département choisi",
+                                                            "properties": {
+                                                                "type": "object",
+                                                                "items": {
+                                                                    "id_quart": {
+                                                                        "type": "integer",
+                                                                        "example": 3160
+                                                                    },
+                                                                    "lib_quart": {
+                                                                        "type": "string",
+                                                                        "example": "ZOUNTORI",
+                                                                        "description": "Nom d'un quartier de l'arrondissement d'une commune du département choisi"
+                                                                    }
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    },
+    "definitions": {
+    }
+}

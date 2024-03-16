@@ -1,0 +1,30 @@
+{
+  "name": "territoire-bj",
+  "version": "1.0.0",
+  "description": "API pour récupérer les infos sur le découpage territorial au bénin",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "install": "^0.13.0",
+    "morgan": "^1.10.0",
+    "npm": "^9.6.5",
+    "swagger-ui-express": "^4.6.3"
+  }
+}
