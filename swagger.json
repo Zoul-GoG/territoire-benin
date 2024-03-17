@@ -1,34 +1,25 @@
 {
-    "swagger": "2.0",
+    "openapi": "3.0.0",
     "info": {
-        "version": "1.0.0",
-        "title": "territoire-bj",
-        "description": "Cette API vous fournit les informations sur les départements, communes, arrondissements et quartiers/villages du Bénin",
-        "license": {
-            "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
-        }
+      "version": "1.0.0",
+      "title": "territoire-bj",
+      "description": "Cette API vous fournit les informations sur les départements, communes, arrondissements et quartiers/villages du Bénin",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
     },
     "servers": [
-        {
-            "url": "https://territoire-bj.onrender.com",
-            "description": "Prod Development Server"
-        }
+      {
+        "url": "https://territoire-bj.onrender.com",
+        "description": "Prod Development Server"
+      }
     ],
     "tags": [
-        {
-            "name": "Territoire",
-            "description": "Routes de récuoération des départements/communes/arrondissements/quartiers du Bénin"
-        }
-    ],
-    "schemes": [
-        "http"
-    ],
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
+      {
+        "name": "Territoire",
+        "description": "Routes de récupération des départements/communes/arrondissements/quartiers du Bénin"
+      }
     ],
     "paths": {
         "/v1/departements": {
