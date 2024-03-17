@@ -9,8 +9,12 @@
             "url": "https://opensource.org/licenses/MIT"
         }
     },
-    "host": "localhost:5010",
-    "basePath": "/territoire",
+    "servers": [
+        {
+            "url": "https://territoire-bj.onrender.com",
+            "description": "Prod Development Server"
+        }
+    ],
     "tags": [
         {
             "name": "Territoire",
