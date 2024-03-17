@@ -11,7 +11,7 @@
     },
     "servers": [
       {
-        "url": "https://territoire-bj.onrender.com",
+        "url": "https://territoire-bj.onrender.com/territoire",
         "description": "Prod Development Server"
       }
     ],
