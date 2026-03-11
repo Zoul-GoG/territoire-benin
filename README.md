@@ -100,9 +100,3 @@ Le middleware `errorMiddleware.js` gère les erreurs et renvoie des réponses JS
 ## 📄 Licence
 
 Licence MIT – voir le fichier `LICENSE` si présent.
-
----
-
-💡 **Astuce** : compléter le README avec des exemples de requêtes curl ou Postman, et des détails sur la configuration de la base de données selon ton environnement.
-
-N’hésite pas à l’adapter selon l’évolution du projet !
